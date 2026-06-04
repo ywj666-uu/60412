@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>弹幕互动游戏 - 方向指令拾取金币</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="app">
+    <header>
+      <h1>弹幕互动游戏</h1>
+      <div class="header-info">
+        <span id="playerCount">在线: 0</span>
+        <span id="timer">剩余: --:--</span>
+      </div>
+    </header>
+
+    <div class="main-container">
+      <div class="game-area">
+        <canvas id="gameCanvas" width="800" height="600"></canvas>
+        <div id="barrageLayer"></div>
+      </div>
+
+      <div class="sidebar">
+        <div class="panel">
+          <h3>排行榜</h3>
+          <div id="leaderboard" class="leaderboard"></div>
+        </div>
+
+        <div class="panel">
+          <h3>我的信息</h3>
+          <div class="my-info">
+            <div>
+              <label>昵称:</label>
+              <input type="text" id="nameInput" maxlength="12" placeholder="输入昵称">
+              <button id="setNameBtn">确定</button>
+            </div>
+            <div id="myScore">得分: 0</div>
+          </div>
+        </div>
+
+        <div class="panel">
+          <h3>发送弹幕</h3>
+          <div class="barrage-input">
+            <input type="text" id="barrageInput" placeholder="输入含 上/下/左/右 的弹幕" maxlength="50">
+            <button id="sendBtn">发送</button>
+          </div>
+          <div class="quick-btns">
+            <button class="dir-btn" data-dir="上">↑ 上</button>
+            <button class="dir-btn" data-dir="下">↓ 下</button>
+            <button class="dir-btn" data-dir="左">← 左</button>
+            <button class="dir-btn" data-dir="右">→ 右</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="gameOverModal" class="modal hidden">
+      <div class="modal-content">
+        <h2>游戏结束!</h2>
+        <div id="gameStats"></div>
+        <button id="closeModal">关闭</button>
+      </div>
+    </div>
+  </div>
+  <script src="game.js"></script>
+</body>
+</html>
